@@ -6,7 +6,7 @@
 /*   By: acourtar <acourtar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:42:07 by acourtar          #+#    #+#             */
-/*   Updated: 2022/10/31 18:55:21 by acourtar         ###   ########.fr       */
+/*   Updated: 2022/11/01 09:23:12 by acourtar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,6 @@ static int	write_sections(char const *s, char c, char **array)
 
 // Allocate space and write part of the string using ft_substr().
 // Malloc protection is inside of ft_substr();
-// Using NULL for start/end to return NULL for final part of the array.
 static char	*fill_array(char const *start, char const *end, int *i)
 {
 	char	*str;
@@ -104,8 +103,8 @@ static char	*fill_array(char const *start, char const *end, int *i)
 	return (str);
 }
 
-// Free all previously assigned memory sections of the array,
-// as well as the top level.
+// Free all previously assigned memory sections of the array in case the
+// malloc() in fill_array() has failed.
 static int	free_mem(char **array)
 {
 	int	i;

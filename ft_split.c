@@ -6,7 +6,7 @@
 /*   By: acourtar <acourtar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:42:07 by acourtar          #+#    #+#             */
-/*   Updated: 2022/11/01 09:23:12 by acourtar         ###   ########.fr       */
+/*   Updated: 2022/11/07 12:43:08 by acourtar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	succes = write_sections(s, c, array);
 	if (succes == 0)
-	{
 		return (NULL);
-	}
 	return (array);
 }
 

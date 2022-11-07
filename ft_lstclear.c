@@ -6,7 +6,7 @@
 /*   By: acourtar <acourtar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 13:46:17 by acourtar          #+#    #+#             */
-/*   Updated: 2022/10/26 14:21:17 by acourtar         ###   ########.fr       */
+/*   Updated: 2022/11/07 12:40:42 by acourtar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	while ((next) != NULL)
 	{
 		next = (*lst)->next;
-		del((**lst).content);
-		free(*lst);
+		ft_lstdelone(*lst, del);
 		*lst = next;
 	}
 }

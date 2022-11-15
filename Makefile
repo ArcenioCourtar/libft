@@ -1,3 +1,4 @@
+CC			:= cc
 NAME		:= libft.a
 OBJFILES	:= \
 		ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o \
@@ -9,8 +10,8 @@ OBJFILES	:= \
 		ft_strtrim.o ft_substr.o ft_tolower.o ft_toupper.o
 OBJBONUS	:= \
 		ft_lstsize.o ft_lstnew.o ft_lstlast.o ft_lstclear.o ft_lstiter.o \
-		ft_lstadd_front.o ft_lstadd_back.o ft_lstdelone.o ft_lstmap.o 		 
-HEADERFILES	:= libft.h
+		ft_lstadd_front.o ft_lstadd_back.o ft_lstdelone.o ft_lstmap.o
+HEADERFILE	:= libft.h
 CFLAGS		:= -Wall -Werror -Wextra
 
 # Commented out the flag since I want to add the bonus by default from now on
@@ -23,18 +24,18 @@ ALL_OBJ := $(OBJFILES) $(OBJBONUS)
 all: $(NAME)
 
 $(NAME): $(ALL_OBJ)
-	ar -ur $@ $^
+	ar -rcs $@ $^
 
-ft_%.o: ft_%.c $(HEADERFILES)
-	cc -c $(CFLAGS) -o $@ $<
+ft_%.o: ft_%.c $(HEADERFILE)
+	$(CC) -c $(CFLAGS) -o $@ $<
 
 re: fclean all
 
 clean:
-	rm $(NAME) $(OBJFILES) $(OBJBONUS)
+	rm -f $(ALL_OBJ)
 
-fclean:
-	rm -f $(NAME) $(OBJFILES) $(OBJBONUS)
+fclean: clean
+	rm -f $(NAME)
 
 bonus:
 	@$(MAKE)

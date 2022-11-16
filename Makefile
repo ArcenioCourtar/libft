@@ -11,12 +11,16 @@ OBJFILES	:= \
 OBJBONUS	:= \
 		ft_lstsize.o ft_lstnew.o ft_lstlast.o ft_lstclear.o ft_lstiter.o \
 		ft_lstadd_front.o ft_lstadd_back.o ft_lstdelone.o ft_lstmap.o
+OBJAFTER	:= ft_printf.o
 HEADERFILE	:= libft.h
 CFLAGS		:= -Wall -Werror -Wextra
 
+# The files in OBJAFTER were added after libft's completion.
+
+ALL_OBJ := $(OBJFILES) $(OBJBONUS) $(OBJAFTER)
 # Commented out the flag since I want to add the bonus by default from now on
 # ifdef COMP_BONUS
-ALL_OBJ := $(OBJFILES) $(OBJBONUS)
+# ALL_OBJ := $(OBJFILES) $(OBJBONUS) $(OBJAFTER)
 # else
 # ALL_OBJ := $(OBJFILES)
 # endif
@@ -34,8 +38,8 @@ re: fclean all
 clean:
 	rm -f $(ALL_OBJ)
 
-fclean: clean
-	rm -f $(NAME)
+fclean:
+	rm -f $(ALL_OBJ) $(NAME)
 
 bonus:
 	@$(MAKE)

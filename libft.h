@@ -6,7 +6,7 @@
 /*   By: acourtar <acourtar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 13:15:15 by acourtar          #+#    #+#             */
-/*   Updated: 2022/11/15 13:13:35 by acourtar         ###   ########.fr       */
+/*   Updated: 2022/11/16 17:56:31 by acourtar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 // Converts initial portion of string to an int
 int		ft_atoi(const char *nptr);
+// My 42 version of printf
+int		ft_printf(const char *str, ...);
 
 // Returns character length of the string (excluding the NULL-terminator!)
 size_t	ft_strlen(const char *s);

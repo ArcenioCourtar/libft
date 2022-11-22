@@ -6,12 +6,13 @@
 /*   By: acourtar <acourtar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:42:25 by acourtar          #+#    #+#             */
-/*   Updated: 2022/10/26 14:35:35 by acourtar         ###   ########.fr       */
+/*   Updated: 2022/11/22 15:13:05 by acourtar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stddef.h>
+#include <stdlib.h>
+#include "libft.h"
 
 static int	set_cmp(char const *set, char c);
 static int	ltr_check(char const *s1, char const *set);
@@ -28,7 +29,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	start = ltr_check(s1, set);
 	end = rtl_check(s1, set);
-	str = ft_calloc(1, (end - start + 1));
+	str = malloc(end - start + 1);
 	if (str == NULL)
 		return (NULL);
 	write_str(s1, str, start, end);
@@ -91,4 +92,5 @@ static void	write_str(char const *s1, char *str, int start, int end)
 		start++;
 		i++;
 	}
+	str[i] = '\0';
 }

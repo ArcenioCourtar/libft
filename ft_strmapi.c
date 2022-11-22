@@ -6,12 +6,13 @@
 /*   By: acourtar <acourtar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:41:55 by acourtar          #+#    #+#             */
-/*   Updated: 2022/10/26 14:34:53 by acourtar         ###   ########.fr       */
+/*   Updated: 2022/11/22 15:12:50 by acourtar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 #include <stddef.h>
+#include "libft.h"
 
 // Perform function 'f' on each character in string 's' (does not modify 's').
 // Returning the result as a newly allocated string.
@@ -22,7 +23,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*str;
 
 	i = 0;
-	str = ft_calloc((ft_strlen(s) + 1), 1);
+	str = malloc(ft_strlen(s) + 1);
 	if (str == NULL)
 		return (NULL);
 	while (*s != '\0')
@@ -31,5 +32,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		i++;
 		s++;
 	}
+	str[i] = '\0';
 	return (str);
 }

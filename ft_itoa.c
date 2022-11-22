@@ -6,10 +6,11 @@
 /*   By: acourtar <acourtar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:39:28 by acourtar          #+#    #+#             */
-/*   Updated: 2022/10/26 14:24:13 by acourtar         ###   ########.fr       */
+/*   Updated: 2022/11/22 15:17:10 by acourtar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <stddef.h>
 #include "libft.h"
 
@@ -26,7 +27,7 @@ char	*ft_itoa(int n)
 		return (ft_strdup("0"));
 	n_long = (long)n;
 	numlen = numlen_calc(n_long);
-	str = ft_calloc((numlen + 1), 1);
+	str = malloc(numlen + 1);
 	if (str == NULL)
 		return (NULL);
 	if (n_long < 0)
@@ -34,6 +35,7 @@ char	*ft_itoa(int n)
 		n_long *= -1;
 		str[0] = '-';
 	}
+	str[numlen] = '\0';
 	while (n_long > 0)
 	{
 		numlen--;

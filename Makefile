@@ -47,6 +47,7 @@ OBJBONUS	:= \
 	ft_lstmap.o
 OBJAFTER	:= \
 	ft_printf.o \
+	get_next_line.o
 HEADERFILE	:= libft.h
 CFLAGS		:= -Wall -Werror -Wextra
 

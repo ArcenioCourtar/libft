@@ -46,6 +46,8 @@ OBJBONUS	:= \
 	ft_lstdelone.o \
 	ft_lstmap.o
 OBJAFTER	:= \
+	ft_isspace.o \
+	ft_atol.o \
 	ft_printf.o \
 	get_next_line.o
 HEADERFILE	:= libft.h

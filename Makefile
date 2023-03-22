@@ -48,8 +48,7 @@ OBJBONUS	:= \
 OBJAFTER	:= \
 	ft_isspace.o \
 	ft_atol.o \
-	ft_printf.o \
-	get_next_line.o
+	ft_printf.o
 HEADERFILE	:= libft.h
 CFLAGS		:= -Wall -Werror -Wextra
 
